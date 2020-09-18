@@ -1,0 +1,124 @@
+﻿<Window x:Class="Project.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="800"
+        MinHeight="500"
+        MinWidth="400">
+    <Window.Resources>
+        <Style x:Key="BlueBtn" TargetType="Button">
+            <Setter Property="Background" Value="#00a8ff"></Setter>
+            <Setter Property="Foreground" Value="#353b48"></Setter>
+            <Setter Property="BorderThickness" Value="0"></Setter>
+            <Setter Property="Cursor" Value="Hand"></Setter>
+        </Style>
+
+        <Style x:Key="MenuTitle" TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        </Style>
+
+        <Style x:Key="SliderDefault" TargetType="Slider">
+            <Setter Property="IsSnapToTickEnabled" Value="True"></Setter>
+            <Setter Property="IsMoveToPointEnabled" Value="True"></Setter>
+        </Style>
+
+        <Style x:Key="ColorSlider" TargetType="Slider" BasedOn="{StaticResource SliderDefault}">
+            <Setter Property="Minimum" Value="0"></Setter>
+            <Setter Property="Maximum" Value="255"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="Margin" Value="10 0"></Setter>
+        </Style>
+
+        <Style x:Key="SliderTextLeft" TargetType="TextBlock">
+            <Setter Property="DockPanel.Dock" Value="Left"></Setter>
+            <Setter Property="TextAlignment" Value="Left"></Setter>
+            <Setter Property="Width" Value="10"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        </Style>
+
+        <Style x:Key="SliderValueRight" TargetType="TextBox">
+            <Setter Property="DockPanel.Dock" Value="Right"></Setter>
+            <Setter Property="TextAlignment" Value="Right"></Setter>
+            <Setter Property="Width" Value="30"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        </Style>
+
+
+        <Style x:Key="SeparatorDefault" TargetType="Separator">
+            <Setter Property="Margin" Value="5 15"></Setter>
+            <Setter Property="Background" Value="#7f8c8d"></Setter>
+        </Style>
+    </Window.Resources>
+    <DockPanel>
+        <Canvas Name="HelloMainContainer" Panel.ZIndex="1" DockPanel.Dock="Top" HorizontalAlignment="Center"></Canvas>
+        <Border
+            Padding="0 10"
+            Background="#2c3e50"
+            Width="180"
+            DockPanel.Dock="Left"
+            TextElement.FontSize="15"
+            TextElement.Foreground="White">
+
+            <StackPanel>
+                <StackPanel Width="160">
+                    <TextBlock Style="{StaticResource MenuTitle}">Pen Thickness</TextBlock>
+                    <DockPanel>
+                        <TextBox Text="{Binding ElementName=penSize, Path=Value, UpdateSourceTrigger=PropertyChanged}"
+                                 Style="{StaticResource SliderValueRight}" />
+                        <Slider Style="{StaticResource SliderDefault}" Minimum="1" Maximum="100" Name="penSize" ValueChanged="SetPenSize" />
+                    </DockPanel>
+                    <Button Style="{StaticResource BlueBtn}"
+                            Margin="50 5"
+                            Click="ResetThickness">
+                        Reset
+                    </Button>
+                </StackPanel>
+
+                <Separator Style="{StaticResource SeparatorDefault}" />
+
+                <StackPanel Width="160">
+                    <TextBlock Style="{StaticResource MenuTitle}">Pen Color</TextBlock>
+                    <Grid Height="100" Margin="10" Background="Black" Name="ColorPreview"></Grid>
+                    <DockPanel>
+                        <TextBlock Style="{StaticResource SliderTextLeft}">R</TextBlock>
+                        <TextBox Text="{Binding ElementName=penColorR, Path=Value, UpdateSourceTrigger=PropertyChanged}"
+                                 Style="{StaticResource SliderValueRight}" />
+                        <Slider Style="{StaticResource ColorSlider}" Name="penColorR" ValueChanged="ChangePenColor" />
+                    </DockPanel>
+                    <DockPanel>
+                        <TextBlock Style="{StaticResource SliderTextLeft}">G</TextBlock>
+                        <TextBox Text="{Binding ElementName=penColorG, Path=Value, UpdateSourceTrigger=PropertyChanged}"
+                                 Style="{StaticResource SliderValueRight}" />
+                        <Slider Style="{StaticResource ColorSlider}" Name="penColorG" ValueChanged="ChangePenColor" />
+                    </DockPanel>
+                    <DockPanel>
+                        <TextBlock Style="{StaticResource SliderTextLeft}">B</TextBlock>
+                        <TextBox Text="{Binding ElementName=penColorB, Path=Value, UpdateSourceTrigger=PropertyChanged}"
+                                 Style="{StaticResource SliderValueRight}" />
+                        <Slider Style="{StaticResource ColorSlider}" Name="penColorB" ValueChanged="ChangePenColor" />
+                    </DockPanel>
+
+                    <Button Style="{StaticResource BlueBtn}"
+                            Margin="50 5"
+                            Click="ResetColors">
+                        Reset
+                    </Button>
+                </StackPanel>
+
+                <Separator Style="{StaticResource SeparatorDefault}" />
+
+                <Button Style="{StaticResource BlueBtn}"
+                        Margin="10 0"
+                        Click="ResetCanvas">
+                    Reset Canvas
+                </Button>
+
+            </StackPanel>
+        </Border>
+        <InkCanvas x:Name="DrawingCanvas"/>
+    </DockPanel>
+</Window>
+    

@@ -1,0 +1,16 @@
+C:\Users\Seth\Desktop\paint 2  352\bin\Debug\Project.exe.config
+C:\Users\Seth\Desktop\paint 2  352\bin\Debug\Project.exe
+C:\Users\Seth\Desktop\paint 2  352\bin\Debug\Project.pdb
+C:\Users\Seth\Desktop\paint 2  352\obj\Debug\Project.csprojAssemblyReference.cache
+C:\Users\Seth\Desktop\paint 2  352\obj\Debug\App.g.cs
+C:\Users\Seth\Desktop\paint 2  352\obj\Debug\MainWindow.g.cs
+C:\Users\Seth\Desktop\paint 2  352\obj\Debug\Project_MarkupCompile.cache
+C:\Users\Seth\Desktop\paint 2  352\obj\Debug\Project_MarkupCompile.lref
+C:\Users\Seth\Desktop\paint 2  352\obj\Debug\App.baml
+C:\Users\Seth\Desktop\paint 2  352\obj\Debug\MainWindow.baml
+C:\Users\Seth\Desktop\paint 2  352\obj\Debug\Project.g.resources
+C:\Users\Seth\Desktop\paint 2  352\obj\Debug\Project.Properties.Resources.resources
+C:\Users\Seth\Desktop\paint 2  352\obj\Debug\Project.csproj.GenerateResource.cache
+C:\Users\Seth\Desktop\paint 2  352\obj\Debug\Project.csproj.CoreCompileInputs.cache
+C:\Users\Seth\Desktop\paint 2  352\obj\Debug\Project.exe
+C:\Users\Seth\Desktop\paint 2  352\obj\Debug\Project.pdb

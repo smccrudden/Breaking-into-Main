@@ -1,0 +1,10 @@
+/* Name: Seth McCrudden
+* Date: 9/16/2020
+* File: Readme
+* Description: This is the file describing what each specific file does.
+*/
+
+The purpose of this project is to allow a user to draw into a canvas while allowing him to change the pen thickness, pen color and clear the canvas. The thickness of the pen can be changed by moving a slider from any thickness between 1 - 100. The color can be changed by changing any of the three sliders (Red, Green or Blue) from 0 - 255.
+The files needed to run this are: App.xaml, App.xaml.cs, MainWindow.xaml, MainWindow.xaml.cs.
+In the App.xaml.cs file creates a new mainwindow and adds a textbox to it from a custom main.
+In the MainWindow.xaml.cs file contains all event handlers for mainwindow.xaml as well as setting default values.
